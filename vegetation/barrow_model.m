@@ -84,7 +84,7 @@ plot(tout,percent_moss_in_diet)
 ylabel('Fraction moss in diet')
 xlabel('Time')
 
-print(figure(1),'-dpdf','-r300','BarrowModel_alpha=0.1')
+print(figure(1),'-dpdf','-r300','BarrowModel_alpha=01.pdf')
 
 figure,
 subplot(311)

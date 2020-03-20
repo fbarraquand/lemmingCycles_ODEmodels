@@ -31,22 +31,23 @@ y0=[K 100 0.0];                            % initial values of state variables v
 tstart = 0;
 tstop = 10;%30
 
-%{ 
-% Matlab integration
+
 tspan=[tstart tstop];                        % timespan for the numerical solution
 options= odeset('Reltol',1e-3,'NonNegative',[1 2]);
-[tout,yout] = ode45(@tri_food_chain , tspan , y0,options);       % ode solver 
+[tout,yout] = ode45(@func_mod5 , tspan , y0,options);       % ode solver 
 % Plotting
 subplot(211)
 plot(tout,yout(:,1))
 subplot(212)
 plot(tout,yout(:,2))
-%}
 
+%{ 
 tvec = linspace(tstart, tstop, 500);
-y = lsode ("func_mod5_oct", [K;100], tvec);
-
+y = lsode ("func_mod5_oct", [K;100], tvec);  %old octave code
 subplot(211)
 plot(tvec,y(:,1),tvec(1:50:end),y(1:50:end,1),'o')
 subplot(212)
 plot(tvec,y(:,2),tvec(1:50:end),y(1:50:end,2),'o')
+%}
+
+

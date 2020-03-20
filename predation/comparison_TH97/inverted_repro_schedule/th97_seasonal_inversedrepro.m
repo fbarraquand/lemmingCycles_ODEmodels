@@ -38,7 +38,7 @@ a=C/Q
 
 y0=[0.1 0.001 0];
 tstart = 0.0;
-tstop = 10.0;
+tstop = 50.0;
 
 tsampling = 501;
 
@@ -66,7 +66,7 @@ plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
-
+title('Seasonal r and constant G')
 % Plot CV, S-axis, max/min (needs annual data)
 
 % Fourier analysis (also annual? or semi...)
@@ -115,7 +115,7 @@ plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
-
+title('Seasonal r and seasonal G')
 
 figure,
 
@@ -148,7 +148,7 @@ plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
-
+title('Constant r and seasonal G')
 
 %%%% Fourth case
 % Generalist predators constant and no seasonality in growth rates
@@ -175,7 +175,7 @@ plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
-
+title('Constant r and constant G')
 %{
 figure,
 subplot(2,1,1)  

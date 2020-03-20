@@ -215,7 +215,7 @@ set(AX(2),'YColor','r','Ylim',[0 1])
 set(H1,'LineStyle','-','Color','k','LineWidth',2)
 set(H2,'LineStyle','-.','Color','r','LineWidth',2)
 
-print(figure(1),'-dpdf','-r300','TimeSeriesLogScale_N0')
+print(figure(1),'-dpdf','-r300','-fillpage','TimeSeriesLogScale_N0')
 
 %%% Phase-space for multiple initial conition
 figure,
@@ -226,5 +226,5 @@ hold off
 title('Phase-Space plot')
 xlabel('log(Lemming density)')
 ylabel('log(Stoat density)')
-print(figure(2),'-dpdf','-r300','PhaseSpace_multipleN0')
+print(figure(2),'-dpdf','-r300','-fillpage','PhaseSpace_multipleN0')
 

@@ -155,7 +155,7 @@ plot(y3,yp1,y3,y1,'LineWidth',2)
 xlabel('Time')
 ylabel('Lemming density variables')
 legend('Nprime','N')
-print(figure(1),'-dpdf','-r300','DensitiesLemmingsGilgModel')
+print(figure(1),'-dpdf','-r300','-fillpage','DensitiesLemmingsGilgModel')
 
 
 %%%%% Old, approximate way of back - calculating the predation rates. Gives rough answers, OK for skuas only ---------%
@@ -266,7 +266,7 @@ semilogy(tout,PredSkua,'-b',tout,PredStoat,'-r',tout,PredOwl,'-c',tout,PredFox,'
 ylabel('Total amount predated')
 title({['Winter lemming growth rate = ',num2str(r_w)], ['Summer lemming growth rate = ', num2str(r_s)]});
 legend('Skua','Stoat','Owl','Fox','Location','NorthWest')
-print(figure(2),'-dpdf','-r300','TimeSeriesLogScale')
+print(figure(2),'-dpdf','-r300','-fillpage','TimeSeriesLogScale')
 
 figure,
 subplot(211)
@@ -291,21 +291,21 @@ legend('Stoat','Skua','Fox','Owl','Location','NorthWest')
 axis([0 tstop 0 1])
 ylabel('Fraction of lemming mortality')
 xlabel('Time')
-print(figure(3),'-dpdf','-r300','TimeSeriesPlusMortality')
+print(figure(3),'-dpdf','-r300','-fillpage','TimeSeriesPlusMortality')
 
 figure,
 plot(log(y1(100:end)),log(y2(100:end)))
 title('Phase-Space plot')
 xlabel('log(Lemming density)')
 ylabel('log(Stoat density)')
-print(figure(4),'-dpdf','-r300','PhaseSpace')
+print(figure(4),'-dpdf','-r300','-fillpage','PhaseSpace')
 
 figure,
 plot(y3,y2,'r',y3,AO+JO,'c',y3,AS+JS,'b',y3,AF+JF,'m','LineWidth',2)
 ylabel('Predator Abundance (Adults + Juveniles)')
 xlabel('Time (years)')
 legend('Stoat','Owl','Skua','Fox','Location','NorthWest')
-print(figure(5),'-dpdf','-r300','PredatorAbundance')
+print(figure(5),'-dpdf','-r300','-fillpage','PredatorAbundance')
 
 figure,
 subplot(211)
@@ -316,5 +316,5 @@ subplot(212)
 plot(y1,W_l*(y1.^4)./(y1.^4+D_l^4),'o-');
 xlabel('Prey density')
 ylabel('Skua Intake')
-print(figure(6),'-dpdf','-r300','FunctionalResponsesWithUse')
+print(figure(6),'-dpdf','-r300','-fillpage','FunctionalResponsesWithUse')
 

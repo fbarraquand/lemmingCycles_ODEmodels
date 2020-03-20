@@ -1,0 +1,1 @@
+%% March 2017 - Searching for alternative stable states by looking at different initial conditions for different parameter values, though I am mostly finding other things (e.g. chaos and cycles for very low population growth rates) 

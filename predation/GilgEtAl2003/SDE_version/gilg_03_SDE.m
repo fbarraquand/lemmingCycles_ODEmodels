@@ -2,7 +2,8 @@
 %%%% Gilg et al. 2003 model, brute force integration %%%%
 %%%% 18/01/2011 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Without the stoat this time.... 
-%%%% 18/04/2015 Adding stochasticity (perhaps re-adding the stoat after too...)
+%%%% 18/04/2015 Adding stochasticity 
+%%%% 20/03/202 re-adding the stoat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clc
 clear all
@@ -98,8 +99,7 @@ intervals = 50000, %365; %50 -> dt=0.02
 dt=1.0/intervals;  %-> NB decrease timestep wrt RK4
 T_max=30; %50.0;
 N(1) = 0.25;%lemming initial density - works up to 1, blow up at 10
-P(1) = 0.00;
-%0.001; %stoat initial density
+P(1) = 0.001; %0.00 of you want no stoat %stoat initial density
 
 %%% Recording
 Po(1)=0; %% Note it is different from P_o, the intermediate variable
@@ -217,7 +217,7 @@ xlabel(' Time (years) ')
 axis tight
 set(1,'DefaultTextFontSize',20)
 set(1,'DefaultAxesFontSize',20)
-print(figure(1),'-depsc2','-r300','TS_Gilg')
+print(figure(1),'-depsc2','-r300','TS_Gilg_SDE')
 
 figure,
 subplot(411)
@@ -237,7 +237,7 @@ xlabel(' Time (years) ')
 axis tight
 set(1,'DefaultTextFontSize',20)
 set(1,'DefaultAxesFontSize',20)
-print(figure(2),'-depsc2','-r300','TS_Gilg_gene')
+print(figure(2),'-depsc2','-r300','TS_Gilg_SDE_predation')
 
 
 figure,

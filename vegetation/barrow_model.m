@@ -67,36 +67,36 @@ percent_moss_in_diet=FR_moss./(FR_moss+FR_plant)
 %%%%%%%%%% PLotting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 subplot(411)
-plot(tout,y1)
+plot(tout,y1,'LineWidth',2)
 ylabel('Vascular (kg/ha)')
 
 subplot(412)
-plot(tout,y2)
+plot(tout,y2,'LineWidth',2)
 ylabel('Moss (kg/ha)')
 
 subplot(413)
-plot(tout,y3)
+plot(tout,y3,'LineWidth',2)
 ylabel('Lemmings (inds/ha)')
 xlabel('Time')
 
 subplot(414)
-plot(tout,percent_moss_in_diet)
+plot(tout,percent_moss_in_diet,'LineWidth',2)
 ylabel('Fraction moss in diet')
 xlabel('Time')
 
-print(figure(1),'-dpdf','-r300','BarrowModel_alpha=01.pdf')
+print(figure(1),'-dpdf','-r300','-fillpage','BarrowModel_alpha=01.pdf')
 
 figure,
 subplot(311)
 ylabel('Plant')
-semilogy(tout,y1)
+semilogy(tout,y1,'LineWidth',2)
 
 subplot(312)
-semilogy(tout,y2)
+semilogy(tout,y2,'LineWidth',2)
 ylabel('Moss')
 
 subplot(313)
-semilogy(tout,y3)
+semilogy(tout,y3,'LineWidth',2)
 ylabel('Lemmings')
 xlabel('Time')
 

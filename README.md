@@ -14,8 +14,8 @@ This repository contains Matlab codes for numerical integration of (mostly) ODE 
 - The codes use Matlab's ``ode45`` algorithm for integration. Although satisfactory in many cases, it can be inappropriate for some stiff problems. In other cases, more brute force methods like Runge-Kutta methods will be sufficient; to add noise (stochastic differential equations), Euler is best. We prefer to avoid discontinuities of functions with respect to time, which has guided some model simplifications.
 - Send feeback to ``frederic.barraquand@u-bordeaux.fr`` 
 - If using these codes for academic work, please cite the associated Zenodo DOI as well as the original publications (depending on which model you are using):
-* Gilg, O., Hanski, I., & Sittler, B. (2003). Cyclic dynamics in a simple vertebrate predator-prey community. Science, 302(5646), 866-868
-* Turchin, P., & Batzli, G. O. (2001). Availability of food and the population dynamics of arvicoline rodents. Ecology, 82(6), 1521-1534.
+     + Gilg, O., Hanski, I., & Sittler, B. (2003). Cyclic dynamics in a simple vertebrate predator-prey community. Science, 302(5646), 866-868
+     + Turchin, P., & Batzli, G. O. (2001). Availability of food and the population dynamics of arvicoline rodents. Ecology, 82(6), 1521-1534.
 
 
 

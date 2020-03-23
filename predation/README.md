@@ -8,8 +8,8 @@ A major deviation from previous literature on rodent population dynamics pertain
 
 We present three types of models: 
 - The Gilg et al. (2003) model plus a variant with a different, Leslie-like numerical response (which produces nonetheless similar results). 
-- ``Pooled generalists`` models, where the four generalist predators are aggregated in one compartment (their behaviour resembles then that of the long-tailed skua, which is the most abundant predator in Greenland). These are parcimonious simplifications of the original Traill model. 
-- In the folder ``comparison_TH97``, we simplify modify the Turchin & Hanski (1997) model by (1) adding the possibility for generalist predation to be seasonal as well and (2) inverting the reproduction schedule (better reproduction in summer). This allows to visualize the dynamical implifications of seasonal generalist predation and the reproduction schedule. 
+- ``Pooled generalists`` models, where the four generalist predators are aggregated in one compartment (their behaviour resembles then that of the long-tailed skua, which is the most abundant predator in Greenland). These are parsimonious simplifications of the original Traill model. 
+- In the folder ``comparison_TH97``, we simplify modify the Turchin & Hanski (1997) model by (1) adding the possibility for generalist predation to be seasonal as well and (2) inverting the reproduction schedule (better reproduction in winter). This allows to visualize the dynamical implifications of seasonal generalist predation and the reproduction schedule. 
 
 ### What diagnostics can you find in these folders? 
 - time series

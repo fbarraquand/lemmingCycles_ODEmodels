@@ -10,7 +10,7 @@ This repository contains Matlab codes for numerical integration of (mostly) ODE 
 
 ### Practical notes 
 
-- Most codes have been written in 2011 - 2014 by Frédéric Barraquand (CNRS; then at University of Tromsø) based on previous codes of the Traill island model by John-André Henden (University of Tromsø). We initially thought to use these for a publication that has not materialized (yet), hence the public release. Our follow-up study on the Traill island model involved Frédéric Barraquand, John-André Henden, Olivier Gilg, Rolf A. Ims and Nigel G. Yoccoz. 
+- Most codes have been written in 2011 - 2014 by Frédéric Barraquand (CNRS; then at University of Tromsø) based on previous codes of the Traill island model by John-André Henden (University of Tromsø). We initially thought to use these for a publication that has not materialized (yet), hence the public release. Our follow-up study on the Traill island model involved Frédéric Barraquand, John-André Henden, Olivier Gilg, Rolf A. Ims and Nigel G. Yoccoz. [Summary here](https://github.com/fbarraquand/lemmingCycles_ODEmodels/tree/master/predation/Traill_model_description.pdf). 
 - The codes use Matlab's ``ode45`` algorithm for integration. Although satisfactory in many cases, it can be inappropriate for some stiff problems. In other cases, more brute force methods like Runge-Kutta methods will be sufficient; to add noise (stochastic differential equations), Euler is best. We prefer to avoid discontinuities of functions with respect to time, which has guided some model simplifications.
 - Send feeback to ``frederic.barraquand@u-bordeaux.fr`` 
 - If using these codes, please cite the associated Zenodo DOI as well as the original publications (depending on which model you are using):

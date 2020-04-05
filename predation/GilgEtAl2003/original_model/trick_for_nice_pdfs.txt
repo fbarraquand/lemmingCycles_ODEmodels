@@ -1,0 +1,1 @@
+pdfcrop --margins 20 input.pdf output.pdf

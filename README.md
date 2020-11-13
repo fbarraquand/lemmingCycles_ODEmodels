@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4271834.svg)](https://doi.org/10.5281/zenodo.4271834)
+
 ## Models for lemming population cycles (in Matlab)
 
 This repository contains Matlab codes for numerical integration of (mostly) ODE models describing lemming population dynamics: 

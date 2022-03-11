@@ -292,7 +292,7 @@ ylabel('Stoat density')
 print(figure(4),'-dpdf','-r300','PhaseSpace')
 
 figure,
-plot(y3,y2,'r',y3,AO+JO,'c',y3,AS+JS,'b',y3,AF+JF,'m','LineWidth',2)
+plot(y3,y2,'r',y3,AO+JO,'c',y3,AS+JS,'b',y3,AF+JF,'m','LineWidth',1.15)
 ylabel('Predator Abundance (Adults + Juveniles)')
 xlabel('Time (years)')
 legend('Stoat','Owl','Skua','Fox','Location','NorthWest')

@@ -176,6 +176,7 @@ axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
 title('Constant r and constant G')
+
 %{
 figure,
 subplot(2,1,1)  

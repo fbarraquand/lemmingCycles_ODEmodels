@@ -100,8 +100,8 @@
 \begin_body
 
 \begin_layout Title
-The Traill island model, how it compares to previous work and a proposed
- low-dimensional simplification
+The Traill island model for lemming dynamics, how it compares to Fennoscandian
+ vole models and a proposed low-dimensional simplification
 \end_layout
 
 \begin_layout Abstract
@@ -129,6 +129,14 @@ The Traill island model of Gilg et al.
  
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Keywords: 
+\series default
+lemmings, voles, population cycles, predator-prey models, tundra ecosystems
+\end_layout
+
 \begin_layout Section*
 The Gilg, Hanski & Sittler (2003) model for Arctic lemmings
 \end_layout
@@ -142,9 +150,27 @@ literal "true"
 
 \end_inset
 
- is constituted of one prey species, the collared lemming, and its four
- predators: the stoat, the Arctic fox, the long-tailed skua and the snowy
- owl.
+ is constituted of one prey species, the collared lemming (
+\emph on
+Dicrostonyx groenlandicus
+\emph default
+), and its four predators: the stoat (
+\emph on
+Mustela erminea
+\emph default
+), the Arctic fox (
+\emph on
+Alopex lagopus
+\emph default
+), the long-tailed skua (
+\emph on
+Stercorarius longicaudus
+\emph default
+) and the snowy owl (
+\emph on
+Bubo scandiacus
+\emph default
+).
  The basic structure of the model is that of a coupled system of nonlinear
  differential equations for the lemming and stoat populations (present year-roun
 d and all years), with time-varying terms.
@@ -177,11 +203,11 @@ d and all years), with time-varying terms.
 \begin_layout Standard
 For convenience, we will count time in unit of years, and define the variable
  
-\begin_inset Formula $t_{mod}=t\equiv1$
+\begin_inset Formula $t_{\text{mod}}=t\equiv1$
 \end_inset
 
 , hence 
-\begin_inset Formula $t_{mod}$
+\begin_inset Formula $t_{\text{mod}}$
 \end_inset
 
  is time of year between 0 and 1.
@@ -196,8 +222,8 @@ For convenience, we will count time in unit of years, and define the variable
 \begin_inset Formula 
 \begin{eqnarray}
 \begin{array}{cc}
-t_{mod}<t_{\text{snowmelt},} & N'=N(t)\,\&\,r(t)=r_{w}\\
-t_{mod}>t_{\text{snowmelt}}, & N'=N(t_{\text{snowmelt}})\,\&\,r(t)=r_{s}
+t_{\text{mod}}<t_{\text{snowmelt},} & N'=N(t)\,\&\,r(t)=r_{w}\\
+t_{\text{mod}}>t_{\text{snowmelt}}, & N'=N(t_{\text{snowmelt}})\,\&\,r(t)=r_{s}
 \end{array}
 \end{eqnarray}
 
@@ -296,10 +322,11 @@ with
 \end_inset
 
 .
- In other words, there is more predator death when there is no food.
- The stoat compartment is submitted to an external forcing, i.e.
- each year at time 
-\begin_inset Formula $t_{stoat}$
+ In other words, there is a higher predator death rate when there is no
+ food.
+ The stoat compartment is additionally submitted to an interruption and
+ modification of the state variable, i.e., each year at time 
+\begin_inset Formula $t_{\text{stoat}}$
 \end_inset
 
  the integration stops and the predator density switches from 
@@ -318,7 +345,7 @@ with
  adults).
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -386,7 +413,7 @@ adult equivalents
 
 \begin_layout Standard
 The numerical response of the predators (and hence, the seasonal variation
- in the generalist predation pressure) is fully described in Table 1.
+ in generalist predation pressure) is fully described in Table 1.
  
 \end_layout
 
@@ -411,7 +438,7 @@ status open
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -422,7 +449,7 @@ Predator
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -433,7 +460,7 @@ Adults (when present)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -444,7 +471,7 @@ Youngs x Growth youngs
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -455,7 +482,7 @@ Arrival date
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -466,7 +493,7 @@ Leaving date
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -479,7 +506,7 @@ Birth date
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -490,7 +517,7 @@ Fox
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -526,7 +553,7 @@ Fox
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -540,13 +567,13 @@ Fox
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size footnotesize
-\begin_inset Formula $t_{fall}=1.0$
+\begin_inset Formula $t_{\text{fall}}=1.0$
 \end_inset
 
 
@@ -554,7 +581,7 @@ Fox
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -570,7 +597,7 @@ Fox
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -581,7 +608,7 @@ Owl
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -595,7 +622,7 @@ Owl
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -617,7 +644,7 @@ Owl
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -631,13 +658,13 @@ Owl
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \size footnotesize
-\begin_inset Formula $t_{fl}=0.94$
+\begin_inset Formula $t_{ol}=0.94$
 \end_inset
 
 
@@ -645,7 +672,7 @@ Owl
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -661,7 +688,7 @@ Owl
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -672,7 +699,7 @@ LT skua
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -686,7 +713,7 @@ LT skua
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -708,7 +735,7 @@ LT skua
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -722,7 +749,7 @@ LT skua
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -736,7 +763,7 @@ LT skua
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -777,10 +804,40 @@ Numerical responses of generalists.
 
 .
  Note, for comparison, that the time of stoat reproduction is 
-\begin_inset Formula $t_{stoat}=0.69$
+\begin_inset Formula $t_{\text{stoat}}=0.69$
 \end_inset
 
 .
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $t_{ofa}=$
+\end_inset
+
+ arrival time for the owl and fox, 
+\begin_inset Formula $t_{la}=$
+\end_inset
+
+ arrival time for the long-tailed skua, 
+\begin_inset Formula $t_{ol}=$
+\end_inset
+
+ leaving time for the owl, 
+\begin_inset Formula $t_{ll}$
+\end_inset
+
+= leaving time for the long-tailed skua.
 \end_layout
 
 \end_inset
@@ -1066,7 +1123,7 @@ status open
 
 \series bold
 2-year population cycles (and transients) in the Gilg et al.
- (2003) without mustelids.
+ (2003) model without mustelids.
  
 \series default
 Parameters for lemming growth: 
@@ -1240,10 +1297,20 @@ with possibly a small noise term on all parameters, so that each parameter
 
  is increased from South to North.
  We use here the parameters 
-\begin_inset Formula $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0;D=6.0,\,,Q=40.0;,\,G=60.0,\,H=15,\,\sigma=0$
+\begin_inset Formula $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0;D=6.0,Q=40.0;,\,G=60.0,\,H=15,\,\sigma=0$
 \end_inset
 
 .
+ See 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "taylor2013variations"
+literal "true"
+
+\end_inset
+
+ for a recent investigation of the possible effects of changes in seasonality
+ over the gradient on periodicity and amplitude.
  
 \end_layout
 
@@ -1282,7 +1349,26 @@ status open
 \series bold
 Densities and predation rates 
 \series default
-in the Turchin & Hanski (1997) model.
+in a modified version of the Turchin & Hanski (1997) model, where we additionall
+y allowed generalist predation rates to vary seasonally, but voles still
+ reproduce better in summer which counteracts the increased predation levels.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:modifiedTH97"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Wait this has seasonal generalist predation too – not the basic TH97 model
 \end_layout
 
 \end_inset
@@ -1296,8 +1382,8 @@ in the Turchin & Hanski (1997) model.
 \end_layout
 
 \begin_layout Standard
-In contrast, the model we adapted for modelling Greenland lemmings using
- the same model framework shows a slightly different kind of dynamics.
+By contrast, the model that we adapted for modelling Greenland lemmings
+ using the same model framework shows a slightly different kind of dynamics.
  
 \end_layout
 
@@ -1314,11 +1400,9 @@ literal "true"
 
 \end_inset
 
- (
-\begin_inset Formula $\approx25$
-\end_inset
-
-), we constructed a simplified model to compare its behaviour to 
+ (26 in Table S1 and S2 from the original paper, plus potentially 10 dates
+ from Table 1 of this article), we constructed a simplified model to compare
+ its behaviour to 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "turchin1997ebm"
@@ -1384,19 +1468,21 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Parameters are tailored for the Greenland Traill island case study: 
+Parameters used in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "LSS"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are tailored to the Greenland Traill island case study: 
 \begin_inset Formula $r_{max}=6,\,r_{min}=0.5,\,K=500,\,G=50,\,H=2,\,C=1000,\,D=0.1,\,s=1.75,\,Q=100.$
 \end_inset
 
- See 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "taylor2013variations"
-literal "true"
-
-\end_inset
-
- for other interesting parameterizations of similar seasonal models.
  Because the carrying capacity 
 \begin_inset Formula $K$
 \end_inset
@@ -1463,6 +1549,13 @@ status open
 \begin_layout Plain Layout
 ``Pooled generalists'' LSS model simulation.
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "LSS"
 
 \end_inset
 
@@ -1597,7 +1690,7 @@ possible,
 \emph default
  rather than what is actually happening in real populations.
  Although in some cases, it may be possible to at least rank different scenarios
- based on very contrasted models 
+ based on very contrasted models and multiple model diagnostics 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "kendall2005population"
@@ -1606,6 +1699,76 @@ literal "false"
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Code availability
+\end_layout
+
+\begin_layout Standard
+Computer codes have been deposited at Zenodo as part of our release of lemming
+ population cycles models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "frederic_barraquand_2020_4271834"
+literal "false"
+
+\end_inset
+
+ with 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+DOI:10.5281/zenodo.4271834
+\end_layout
+
+\end_inset
+
+.
+ These are additionally available at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/fbarraquand/lemmingCycles_ODEmodels
+\end_layout
+
+\end_inset
+
+.
+ The repository includes of course code for the original Traill island model,
+ codes to simulate the Turchin & Hanski (1997) model with/without seasonal
+ generalist predation, as well as our proposed LSS simplification of the
+ model with 9 parameters.
+ The repository also includes features not used here, such as a stochastic
+ (SDE) version of the Traill island model, various models considered in
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin2001availability"
+literal "false"
+
+\end_inset
+
+ for lemming-plant interactions, and a host-parasite model of an interaction
+ with unknown parasite, whose main purpose is to elicit caution regarding
+ inferring cycle causation without hard data on all main parameters of an
+ interaction.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Acknowledgements
+\end_layout
+
+\begin_layout Standard
+FB thanks Rachel A.
+ Taylor for discussions and sharing results on the effects of generalist
+ predation in the Turchin & Hanski (1997) model.
  
 \end_layout
 
@@ -1669,9 +1832,9 @@ riven work is needed.
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Additional evidence for non-stabilizing effect of generalist predators
@@ -1684,7 +1847,7 @@ Additional evidence for non-stabilizing effect of generalist predators
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation
@@ -1755,7 +1918,7 @@ literal "true"
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "traill_model"
-options "ecol_let"
+options "amnat"
 
 \end_inset
 

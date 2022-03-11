@@ -1,0 +1,1766 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{ae,aecompl}
+\usepackage{lineno}
+\usepackage{authblk}
+
+\date{}
+
+\author[1,2]{Frédéric Barraquand}
+\author[1]{John-André Henden}
+\author[3,4]{Olivier Gilg}
+\author[1]{\\ Rolf A. Ims}
+\author[1]{Nigel G. Yoccoz}
+
+\affil[1]{Department of Arctic and Marine Biology, University of Tromsø, Tromsø, Norway}
+\affil[2]{Institute of Mathematics of Bordeaux, CNRS, France}
+\affil[3]{Chrono-environnement, Université de Bourgogne Franche-Comté, Besançon, France}
+\affil[4]{Groupe de Recherche en Ecologie Arctique, Francheville, France}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing double
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2.5cm
+\rightmargin 3cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Traill island model, how it compares to previous work and a proposed
+ low-dimensional simplification
+\end_layout
+
+\begin_layout Abstract
+The Traill island model of Gilg et al.
+ (2003) is a landmark mechanistic modelling attempt of the cyclic population
+ dynamics of rodents, focusing on a high Arctic community with one prey,
+ the collared lemming, and four predators : the stoat, the Arctic fox, the
+ long-tailed skua and the snowy owl.
+ In the present short note, we first summarize how the model works in light
+ of theory on seasonally forced predator-prey systems, with a focus on the
+ temporal dynamics of predation rates.
+ We show notably how the impact of generalist predation, which is able here
+ to initiate population declines, differs slightly from that of generalist
+ predation in other mechanistic models of rodent-mustelid interactions such
+ as Turchin & Hanski (1997)'s, which is also simulated here.
+ We then provide a low-dimensional approximation with a single generalist
+ predator compartment that mimics the essential features of the Traill island
+ model: cycle periodicity, amplitude, shape, as well as generalist-induced
+ declines.
+ This simpler model should be broadly applicable to model other lemming
+ populations that predominantly grow under the snow during the winter period.
+ Matlab computer codes for Gilg et al.
+ (2003), its two-dimensional approximation, as well as alternative lemming
+ population dynamics models are provided.
+ 
+\end_layout
+
+\begin_layout Section*
+The Gilg, Hanski & Sittler (2003) model for Arctic lemmings
+\end_layout
+
+\begin_layout Standard
+The predator-prey community in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ is constituted of one prey species, the collared lemming, and its four
+ predators: the stoat, the Arctic fox, the long-tailed skua and the snowy
+ owl.
+ The basic structure of the model is that of a coupled system of nonlinear
+ differential equations for the lemming and stoat populations (present year-roun
+d and all years), with time-varying terms.
+ The time-varying part of the model results largely from avian and fox predation
+ on lemmings, which happens only in the summer, in addition to a heightened
+ intrinsic population growth of lemmings in winter.
+ Finally, another forcing term comes from the stoat reproduction, which
+ is modelled as a discontinuous burst, the stoat population being multiplied
+ by 
+\begin_inset Formula $(1+v)$
+\end_inset
+
+ every year in the spring.
+ The model here is slightly reformulated to make its mathematical structure
+ more apparent.
+ The lemming population dynamics are described by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dN}{dt}=\underbrace{r(t)N}_{\text{exp. growth}}-\underbrace{\Gamma(N,N',t)}_{\text{generalist predation}}-\underbrace{\frac{cN^{2}P}{D^{2}+N^{2}}}_{\text{specialist predation}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For convenience, we will count time in unit of years, and define the variable
+ 
+\begin_inset Formula $t_{mod}=t\equiv1$
+\end_inset
+
+, hence 
+\begin_inset Formula $t_{mod}$
+\end_inset
+
+ is time of year between 0 and 1.
+ A key variable is 
+\begin_inset Formula $N'$
+\end_inset
+
+, the lemming density at snowmelt: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\begin{array}{cc}
+t_{mod}<t_{\text{snowmelt},} & N'=N(t)\,\&\,r(t)=r_{w}\\
+t_{mod}>t_{\text{snowmelt}}, & N'=N(t_{\text{snowmelt}})\,\&\,r(t)=r_{s}
+\end{array}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $N'$
+\end_inset
+
+ can be thought of as a perceived lemming density by generalist and nomadic
+ predators upon their seasonal arrival to the system, that introduces a
+ short time delay in summer in the model (decisions made by the predators
+ are conditional to 
+\begin_inset Formula $N'$
+\end_inset
+
+).
+ The generalist predation term 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Gamma(N,N',t)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is exactly zero in winter, and changes during the summer as a function
+ of settlement and reproduction schedules of the various predators.
+ The stoat density 
+\begin_inset Formula $P$
+\end_inset
+
+ has dynamics of the form 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dP}{dt}=-(d_{h}+\Delta(N)(d_{l}-d_{h}))P
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $d_{h}$
+\end_inset
+
+ the maximum stoat death rate and 
+\begin_inset Formula $d_{l}$
+\end_inset
+
+ the minimum death rate, and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Delta(N)$
+\end_inset
+
+ a sigmoid function between 0 and 1, that makes the dynamics switch between
+ the two mortality rates according to the formula 
+\begin_inset Formula $\Delta(N)=1/2+\arctan(b(N-D))/\pi$
+\end_inset
+
+.
+ In other words, there is more predator death when there is no food.
+ The stoat compartment is submitted to an external forcing, i.e.
+ each year at time 
+\begin_inset Formula $t_{stoat}$
+\end_inset
+
+ the integration stops and the predator density switches from 
+\begin_inset Formula $P$
+\end_inset
+
+ to 
+\begin_inset Formula $P(1+v)$
+\end_inset
+
+ where 
+\begin_inset Formula $v$
+\end_inset
+
+ is the number of offsprings (the youngs are assumed to be equivalents to
+ adults).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+F: We count both males and females because they both contribute to predation
+ –> btw that's something I should be wary of in other models.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+The generalist predation rate can be decomposed into 3 separate terms correspond
+ing to the different predators (both for adults and juveniles, the latter
+ being counted in 
+\begin_inset Quotes eld
+\end_inset
+
+adult equivalents
+\begin_inset Quotes erd
+\end_inset
+
+).
+ It is a function of time through the predator densities: 
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula 
+\begin{equation}
+\Gamma(N,N',t)=\underbrace{\frac{W_{f}N^{2}(P_{f}(t)+P_{yf}(t))}{D_{f}^{2}+N(t)^{2}}}_{\text{fox}}+\underbrace{\frac{W_{o}N(t)^{2}(P_{o}(t)+P_{yo}(t))}{D_{o}^{2}+N(t)^{2}}}_{\text{owl}}+\underbrace{\frac{W_{l}N(t)^{4}(P_{l}(t)+P_{yl}(t))}{D_{l}^{4}+N(t)^{4}}}_{\text{skua}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The numerical response of the predators (and hence, the seasonal variation
+ in the generalist predation pressure) is fully described in Table 1.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+
+\size footnotesize
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Predator
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Adults (when present)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Youngs x Growth youngs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Arrival date
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Leaving date
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Birth date
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Fox
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{f}=\frac{b_{f}N'^{2}}{Y_{f}^{2}+N'^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{yf}(t)=\frac{b'_{f}N'^{2}}{Y_{f}\text{'²}+N'^{2}}$
+\end_inset
+
+ 
+\begin_inset Formula $\times$
+\end_inset
+
+
+\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{ofa}=0.52$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{fall}=1.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{\text{snowmelt}}=0.65$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Owl
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{o}=\frac{b_{o}(N'-2)}{Yo+N'-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{yo}(t)=\frac{b'_{o}(N'-2)}{Y'_{o}+N'-4}$
+\end_inset
+
+
+\begin_inset Formula $\times$
+\end_inset
+
+
+\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{ofa}=0.52$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{fl}=0.94$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{\text{birth owl}}=0.67$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+LT skua
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{l}=0.02$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $P_{yl}(t)=\frac{b'_{l}N'^{2}}{Y_{l}'^{2}+N'^{2}}$
+\end_inset
+
+
+\begin_inset Formula $\times$
+\end_inset
+
+
+\begin_inset Formula $\frac{1}{1+e^{-0.464(365t_{mod}-4.55)}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{la}=0.62$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{ll}=0.81$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\begin_inset Formula $t_{\text{birth skua}}=0.72$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Numerical responses of generalists.
+ The density of adults in the first column apply only during the period
+ between the arrival and leaving dates mentioned in the 4th and 5th columns.
+ The density of youngs is conditional on that of the adults being positive,
+ and will be non-zero after the birth date.
+ 
+\begin_inset Formula $P_{o}=0$
+\end_inset
+
+ whenever 
+\begin_inset Formula $N'<2$
+\end_inset
+
+.
+ Note, for comparison, that the time of stoat reproduction is 
+\begin_inset Formula $t_{stoat}=0.69$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../GilgEtAl2003/original_model/PredatorAbundance.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Predator abundances over time in the Gilg et al.
+ (2003) model for the reference parameter set with all predators present.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TimeSeriesLogScale.pdf
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Population cycles and predation rates in the Gilg et al.
+ (2003) model, in logarithmic scale.
+
+\series default
+ Parameters for lemming and stoats: 
+\begin_inset Formula $r_{W}=5,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.08,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$
+\end_inset
+
+.
+ Lemming density is given in individuals per ha.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This seasonal and large mortality (
+\begin_inset Formula $\approx$
+\end_inset
+
+ 80 to 90% of lemming individuals are eaten by skuas and owls over the summer
+ in peak years
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+computed for a few peaks with the model
+\end_layout
+
+\end_inset
+
+) is in effect 
+\emph on
+equivalent to a very large seasonal perturbation
+\emph default
+, mirroring theoretical results that show the oscillation-generating effects
+ of such seasonal perturbations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "rinaldi1993multiple,king2001gpc,taylor2012seasonal"
+literal "true"
+
+\end_inset
+
+.
+ Simulations of another, simplified Lemming-Stoat-Skua (LSS) model
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+which assumes that all generalist predators behave like skuas
+\end_layout
+
+\end_inset
+
+ adapting the framework of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+ to reduce the model complexity of the Gilg et al.
+ (2003) model, show that the 95% upper quantile of lemming values can be
+ increased by a factor of about 1.3 in case of seasonal rather than constant
+ generalist predation.
+ Hence seasonal generalist predation, together with other sources of seasonality
+ (e.g., in birth rates, 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "taylor2013variations"
+literal "true"
+
+\end_inset
+
+), can increase the potential for high-amplitude oscillations.
+ Our LSS model does confirm, however, that increases in the 
+\emph on
+average
+\emph default
+ quantity of generalists (
+\emph on
+G
+\emph default
+) such as skuas decreases cycle amplitude and periodicity like shown in
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "false"
+
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Whether patterns of generalist predator abundance in Fennoscandia truly
+ explain the cyclicity gradient is currently unclear, because generalist
+ predator density decreases on average up North (which decreases periodicity
+ and amplitude) but the seasonality of predation increases as well (which
+ in contrast increases cyclicity).
+ The role of seasonality in explaining this latitudinal cyclicity gradient
+ might be currently undervalued 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bjornstad1995geographic,taylor2013variations"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ model without mustelids, but with generalist predators, can exhibit 2-year
+ population cycles for some parameter values (Fig.
+ 3), and
+\series bold
+ 
+\series default
+this is largely due to the recruitment of juveniles foxes at the end of
+ the cycle.
+ We initially spotted this because of a typo in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+'s Supplementary Material (which has been corrected in 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "gilg2009climate"
+literal "false"
+
+\end_inset
+
+ and did not affect 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+'s simulations) where the max density of owls 
+\begin_inset Formula $b_{0}$
+\end_inset
+
+ had been multiplied by two.
+ Two-year population cycles do not appear for the standard parameter set
+ of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+, but it is easy to imagine that for a slightly different predator composition
+ at another study site, such short-term fluctuations might become possible.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TimeSeriesLogScale_woutStoats_Owlsx2.pdf
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+2-year population cycles (and transients) in the Gilg et al.
+ (2003) without mustelids.
+ 
+\series default
+Parameters for lemming growth: 
+\begin_inset Formula $r_{W}=4,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.1,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$
+\end_inset
+
+.
+ The max.
+ number of owls has been multiplied by two.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the other hand, removing the skua population in the differential equations
+ model leads to a blow-up (unstable oscillations diverging away from the
+ attractor).
+ Therefore, our interpretation of the cycles in the model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ is that: 
+\end_layout
+
+\begin_layout Enumerate
+Long-tailed skuas keep the lemming cycle within bounds through predation
+ during the summer and generate, together with owls, strong seasonal forcing.
+ Their influence is therefore two-fold: (a) their generalist predation tends
+ to keep lemmings in check but (b) the fact that such predation is seasonal
+ contributes to the population cycling.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The slightly delayed reproductive response of foxes can for some parameter
+ sets create a short-period (2-year) cycle in absence of mustelids.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Stoats generate an eventually unstable lemming-stoat oscillation, which
+ is transformed into a more sustainable attractor by generalists (skuas
+ in particular).
+ 
+\end_layout
+
+\begin_layout Standard
+Our conclusion is therefore that both `generalists' such as skuas/owls/foxes
+ and specialists such as mustelids contribute to some degree to generating
+ collared lemming fluctuations in the Traill Island model.
+ These considerations open up new challenges in defining the precise role
+ of generalist (or nomadic specialists) versus resident specialist predators.
+ 
+\end_layout
+
+\begin_layout Section*
+Comparison to the vole weasel-model of Turchin and Hanski (1997)
+\end_layout
+
+\begin_layout Standard
+The model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+ can be written
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dN}{dt}=rN\left(1-\frac{N}{K}\right)-\underbrace{\frac{GN^{2}}{C^{2}+N^{2}}}_{\text{generalists}}-\underbrace{\frac{aNP}{D+N}}_{\text{specialists}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dP}{dt}=sP\left(1-q\frac{P}{N}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Adding seasonality and adimensionalizing, we arrive at 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dn}{dt}=r(1-e\sin(2\pi t))n-rn^{2}-\frac{gn^{2}}{h^{2}+n^{2}}-\frac{an}{n+d}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dp}{dt}=s(1-e\sin(2\pi t))p-sp^{2}/n
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with possibly a small noise term on all parameters, so that each parameter
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\Pi_{t}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ is transformed once a year into 
+\begin_inset Formula $\Pi_{t}(1+\sigma\epsilon_{t}),\epsilon_{t}\sim N(0,1)$
+\end_inset
+
+.
+ This models reproduces the Fennoscandian gradient when 
+\begin_inset Formula $G$
+\end_inset
+
+ is increased from South to North.
+ We use here the parameters 
+\begin_inset Formula $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0;D=6.0,\,,Q=40.0;,\,G=60.0,\,H=15,\,\sigma=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In Fig.
+ 4 below we illustrate the time series of weasel and vole densities as well
+ as the total amount killed per unit time for specialists or generalists,
+ which shows that specialist predation is superior to generalist predation
+ during vole population declines.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TimeSeriesLogScale_TH97_seasonalGenPred.pdf
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Densities and predation rates 
+\series default
+in the Turchin & Hanski (1997) model.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In contrast, the model we adapted for modelling Greenland lemmings using
+ the same model framework shows a slightly different kind of dynamics.
+ 
+\end_layout
+
+\begin_layout Section*
+``Pooled generalists'' model (aka Lemming - Stoat - Skua)
+\end_layout
+
+\begin_layout Standard
+Because there are very many parameters in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ (
+\begin_inset Formula $\approx25$
+\end_inset
+
+), we constructed a simplified model to compare its behaviour to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+.
+ The model assumes that all generalists behave like the skua (the more abundant
+ generalist, with numbers that only depend on the season and not on other
+ species densities).
+ It also assumes that the numerical response has the more simplifed Leslie-type
+ form of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+, which allows to formulate a smooth model.
+ The LSS model uses a winter indicator variable 
+\begin_inset Formula $W(t)=\frac{1}{2}(1+\cos(2\pi t))$
+\end_inset
+
+.
+ The time 
+\begin_inset Formula $t=0$
+\end_inset
+
+ is in january, so that 
+\begin_inset Formula $W=1$
+\end_inset
+
+ in full winter, 
+\begin_inset Formula $0$
+\end_inset
+
+ in full summer.
+ The full differential equation model then writes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dN}{dt}=r_{min}N+(r_{max}-r_{min})W(t)N-r_{max}\frac{N^{2}}{K}-\underbrace{\frac{G(1-W(t))N^{4}}{H^{4}+N^{4}}}_{\text{generalist = skua}}-\underbrace{\frac{CN^{2}P}{D^{2}+N^{2}}}_{\text{specialist = stoat}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{dP}{dt}=sP\left(1-q\frac{P}{N}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameters are tailored for the Greenland Traill island case study: 
+\begin_inset Formula $r_{max}=6,\,r_{min}=0.5,\,K=500,\,G=50,\,H=2,\,C=1000,\,D=0.1,\,s=1.75,\,Q=100.$
+\end_inset
+
+ See 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "taylor2013variations"
+literal "true"
+
+\end_inset
+
+ for other interesting parameterizations of similar seasonal models.
+ Because the carrying capacity 
+\begin_inset Formula $K$
+\end_inset
+
+ in absence of predation was absent in the Traill island model, it is here
+ set to a large value, but it is notable that the LSS model can also work
+ without.
+ The functional response exponents have been taken in accordance to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ and are all sigmoid (Type III), in contrast to the more classical choice
+ of type II response for specialists and type III for generalists in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Simulating this model, Fig 5 below, we see that the predation by generalists
+ in summer is much higher than that of the specialist (note the logarithmic
+ scale), in constrast to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+.
+ We also see very clearly that generalists clearly initiate the lemming
+ declines, by ``cropping off'' the lemming peaks.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TimeSeriesLogScale_LemmingLikeTH97_SinusoidalSeasonality.pdf
+	width 14cm
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+``Pooled generalists'' LSS model simulation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+A cautionary tale on cycle shape in mechanistic models
+\end_layout
+
+\begin_layout Standard
+It has been proposed that cycle shape can be a proxy for cycle causation
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "turchin2000lemmings"
+literal "true"
+
+\end_inset
+
+.
+ We offer a different view here.
+ A difficulty with the numerous mechanistic mathematical models available
+ to model rodent cycles is that they tend to produce cycles with correct
+ periodicity and amplitude, but with shapes often different from that of
+ the data.
+ In other words, mechanistic models with empirically estimated parameters
+ might not fit all the details of the cycle very well.
+ For example, in 
+\begin_inset CommandInset citation
+LatexCommand citet
+after "Fig. 4"
+key "korpimaki2002dynamic"
+literal "true"
+
+\end_inset
+
+ the mechanistic predation model consistently produces cycles that rank
+ in the right side of Royama's triangle, where delayed density-dependence
+ generates the crashes after a plateau at high density 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "royama1992analytical"
+literal "true"
+
+\end_inset
+
+.
+ However, the data shows often faster crashes, ranking on the left side
+ of the triangle (Fig.
+ 4 in their paper).
+ Conversely, the model in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ cited above tends to produce fast crashes in just one year while the data
+ show crashes occurring over one or two years.
+ This is arguably an undesirable property of the model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "oksanen2008arctic"
+literal "true"
+
+\end_inset
+
+, which incidentally refutes the claims of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin2000lemmings"
+literal "true"
+
+\end_inset
+
+ that 
+\begin_inset Quotes eld
+\end_inset
+
+prey peaks
+\begin_inset Quotes erd
+\end_inset
+
+ have a rounded shape.
+ The models by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "korpimaki2002dynamic"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "gilg2003cyclic"
+literal "true"
+
+\end_inset
+
+ therefore seem to be equally good at describing periodicity and amplitude
+ of the time series, but equally limited to reproduce cycle shape
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Surely this applies to many other mechanistic models...
+\end_layout
+
+\end_inset
+
+.
+ With very rich datasets (>100 data points), it might be possible to find
+ the most likely models just based on cycle shape, but given the limited
+ data available here (
+\begin_inset Formula $\approx$
+\end_inset
+
+ 25 years with no spatial replication, which is common in many stuch study
+ sites), such endeavours may be a little premature.
+ Mechanistic mathematical models may be best interpreted as illustrating
+ what is 
+\emph on
+possible,
+\emph default
+ rather than what is actually happening in real populations.
+ Although in some cases, it may be possible to at least rank different scenarios
+ based on very contrasted models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kendall2005population"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Here we stick to that interpretation: it is 
+\emph on
+possible 
+\emph default
+(perhaps likely) that avian predators provoke crashes in lemmings and that
+ stoats amplify and lengthen such fluctuations by bringing the lemming populatio
+ns to very low values for extended periods of time.
+ Which leads to the question: what do suggest meta-analyses of empirical
+ data on rodents? 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lima2006feedback"
+literal "true"
+
+\end_inset
+
+ report a strong first-order signal with many coefficients of log-linear
+ autoregressive models ranking on the left side of the Royama triangle (where
+ the model exhibits overcompensating direct density-dependence), which suggests
+ mostly fast crashes (like in this model).
+ Our numerical experiments with the model of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "turchin1997ebm"
+literal "true"
+
+\end_inset
+
+ suggest that it is possible to tweak the parameters so as to span the whole
+ of Royama's triangle though.
+ However, linear autoregressive models do not reproduce well the nonlinear
+ shape of density-dependence in the Turchin and Hanski model.
+ Nonlinear statistical models, with often fewer parameters, can and do help
+ understanding the precise shape of density-dependence, itself related to
+ cycle shape 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "framstad1997limit,kausrud2008linking,barraquand2014overcompensation"
+literal "true"
+
+\end_inset
+
+.
+ Hence, it is difficult to produce clear-cut conclusions, and more empirically-d
+riven work is needed.
+ In the meantime caution should be exerted in inferences of mechanisms behind
+ oscillations on the basis of high-dimensional mechanistic models.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Additional evidence for non-stabilizing effect of generalist predators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "korpimaki2005vole"
+literal "true"
+
+\end_inset
+
+ suggested the possibility of low-amplitude cycles generated by generalists
+ with a model based on isoclines.
+ More recently, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "erbach2013bistability"
+literal "true"
+
+\end_inset
+
+
+\series bold
+\emph on
+ 
+\series default
+\emph default
+remarked thoughtfully that even the simplest ordinary differential equation
+ models including generalist predators neglect that true generalists can
+ and do reproduce at low food density of their primary prey.
+ This would not be the case for the skuas and owls in Greenland, but is
+ relevant for quite a few other species of interest at lower latitudes.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "erbach2013bistability"
+literal "true"
+
+\end_inset
+
+ then showed that generalist predator-prey models including consumer reproductio
+n at low resource density do exhibit limit cycles, and various other kinds
+ of oscillatory behaviour.
+ That is an example where generalist predation directly initiate declines
+ as well.
+ In a more applied setting, it has also been remarked that fishing - a key
+ example of generalist predation - can magnify the fluctuations of fish
+ populations by changing prey demographic structure towards faster life-historie
+s 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "anderson2008fishing,shelton2011fluctuations"
+literal "true"
+
+\end_inset
+
+.
+ In that case, generalists do not initiate necessarily the fluctuations
+ but instead amplify them.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "traill_model"
+options "ecol_let"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

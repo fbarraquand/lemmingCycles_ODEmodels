@@ -6,7 +6,7 @@
 %%% Predation by generalist seasonal -> change from the original model
 %%% Or we could add a parameter summer season length -> Maybe more parsimonious
 
-function dydt = th97_seasonal_func(t,y)
+function dydt = th97_seasonal_gen_ng_func_IR(t,y)
 
 global r K G H C D s Q g h d a
 

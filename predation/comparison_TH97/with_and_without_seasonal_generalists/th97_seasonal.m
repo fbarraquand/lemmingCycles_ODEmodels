@@ -10,6 +10,8 @@
 %%% Note: Figs 3 to 4 shows though seasonality of gen. predation has no impact when birth rates are already seasonal, it can have an important effect when they are not. 
 %%% Maybe we should look at this with less seasonal birth rates (not zero in winter...)
 
+%%% 05/06/2014 -> Blue = gen predation, red = spe predation, black = DD mortality
+
 clc 
 clear all
 close all
@@ -59,11 +61,39 @@ subplot(312)
 plot(tout,yout(:,2),'LineWidth',2)
 ylabel('Weasel')
 subplot(313)
-plot(tout,MReg./Mtot,'b',tout,MGen./Mtot,'k',tout,MSpe./Mtot,'r','LineWidth',2)
+plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
 title('Seasonal r and constant G')
+print(figure(1),'-dpdf','-r300','TimeSeries_TH97_GenPred')
+
+figure,
+subplot(2,1,1)  
+[AX,H1,H2] = plotyy(tout,yout(:,1),tout,yout(:,2),'semilogy');
+ylim=[0 tstop];
+y2lim=[0 1]; %%% isnt that y2lim?
+set(get(AX(1),'Ylabel'),'String','Vole Density','Color','k')
+set(get(AX(2),'Ylabel'),'String','Weasel Density','Color','r')
+set(AX,'Xlim',[0 tstop])
+set(get(AX(1),'Xlabel'),'String','Time [Years]','Color','k')
+set(AX(1),'YColor','k','Ylim',[0 100])
+set(AX(2),'YColor','r','Ylim',[0 1])
+set(H1,'LineStyle','-','Color','k','LineWidth',2)
+set(H2,'LineStyle','-.','Color','r','LineWidth',2)
+
+DeathReg = yout(:,1).*MReg;
+PredSpe = yout(:,1).*MSpe;
+PredGen = yout(:,1).*MGen;
+subplot(2,1,2)
+%semilogy(tout,DeathReg,'-k',tout,PredSpe,'-r',tout,PredGen,'-b','LineWidth',2); % when regulation is on
+semilogy(tout,PredSpe,'-r',tout,PredGen,'-b','LineWidth',2); 
+%legend('regulation','specialist','generalists')% regulation on
+legend('specialist','generalist')
+ylabel('Amount killed')
+print(figure(2),'-dpdf','-r300','TimeSeriesLogScale_TH97_GenPred')
+
+
 % Plot CV, S-axis, max/min (needs annual data)
 
 % Fourier analysis (also annual? or semi...) TO DO...
@@ -112,11 +142,38 @@ subplot(312)
 plot(tout,yout(:,2),'LineWidth',2)
 ylabel('Weasel')
 subplot(313)
-plot(tout,MReg./Mtot,'b',tout,MGen./Mtot,'k',tout,MSpe./Mtot,'r','LineWidth',2)
+plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
 title('Seasonal r and seasonal G')
+print(figure(3),'-dpdf','-r300','TimeSeries_TH97_seasonalGenPred')
+
+
+figure,
+subplot(2,1,1)  
+[AX,H1,H2] = plotyy(tout,yout(:,1),tout,yout(:,2),'semilogy');
+ylim=[0 tstop];
+y2lim=[0 1]; %%% isnt that y2lim?
+set(get(AX(1),'Ylabel'),'String','Vole Density','Color','k')
+set(get(AX(2),'Ylabel'),'String','Weasel Density','Color','r')
+set(AX,'Xlim',[0 tstop])
+set(get(AX(1),'Xlabel'),'String','Time [Years]','Color','k')
+set(AX(1),'YColor','k','Ylim',[0 100])
+set(AX(2),'YColor','r','Ylim',[0 1])
+set(H1,'LineStyle','-','Color','k','LineWidth',2)
+set(H2,'LineStyle','-.','Color','r','LineWidth',2)
+
+DeathReg = yout(:,1).*MReg;
+PredSpe = yout(:,1).*MSpe;
+PredGen = yout(:,1).*MGen;
+subplot(2,1,2)
+%semilogy(tout,DeathReg,'-k',tout,PredSpe,'-r',tout,PredGen,'-b','LineWidth',2); % when regulation is on
+semilogy(tout,PredSpe,'-r',tout,PredGen,'-b','LineWidth',2); 
+%legend('regulation','specialist','generalists')% regulation on
+legend('specialist','generalist')
+ylabel('Amount killed')
+print(figure(4),'-dpdf','-r300','TimeSeriesLogScale_TH97_seasonalGenPred')
 
 figure,
 
@@ -148,7 +205,7 @@ subplot(312)
 plot(tout,yout(:,2),'LineWidth',2)
 ylabel('Weasel')
 subplot(313)
-plot(tout,MReg./Mtot,'b',tout,MGen./Mtot,'k',tout,MSpe./Mtot,'r','LineWidth',2)
+plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')
@@ -175,7 +232,7 @@ subplot(312)
 plot(tout,yout(:,2),'LineWidth',2)
 ylabel('Weasel')
 subplot(313)
-plot(tout,MReg./Mtot,'b',tout,MGen./Mtot,'k',tout,MSpe./Mtot,'r','LineWidth',2)
+plot(tout,MReg./Mtot,'k',tout,MGen./Mtot,'b',tout,MSpe./Mtot,'r','LineWidth',2)
 axis([tstart tstop 0 1])
 ylabel('Variable mortality (fraction)')
 xlabel('Time')

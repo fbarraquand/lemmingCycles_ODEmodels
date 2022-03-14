@@ -896,7 +896,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename TimeSeriesLogScale.pdf
-	width 15cm
+	width 14cm
 
 \end_inset
 

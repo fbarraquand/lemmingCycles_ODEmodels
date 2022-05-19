@@ -9,6 +9,7 @@
 \usepackage{ae,lmodern}
 \usepackage{lineno}
 \usepackage{authblk}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 \date{}
 
@@ -18,10 +19,10 @@
 \author[1]{\\ Rolf A. Ims}
 \author[1]{Nigel G. Yoccoz}
 
-\affil[1]{Department of Arctic and Marine Biology, University of Tromsø, Tromsø, Norway}
-\affil[2]{Institute of Mathematics of Bordeaux, CNRS, France}
-\affil[3]{Chrono-environnement, Université de Bourgogne Franche-Comté, Besançon, France}
-\affil[4]{Groupe de Recherche en Ecologie Arctique, Francheville, France}
+\affil[1]{\normalsize Department of Arctic and Marine Biology, UiT The Arctic University of Norway, Tromsø, Norway}
+\affil[2]{\normalsize Institute of Mathematics of Bordeaux, CNRS and University of Bordeaux, Talence, France}
+\affil[3]{\normalsize Laboratoire Chrono-environnement, Université de Bourgogne Franche-Comté, Besançon, France}
+\affil[4]{\normalsize Groupe de Recherche en Ecologie Arctique, Francheville, France}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -75,9 +76,9 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3cm
+\leftmargin 2.5cm
 \topmargin 2.5cm
-\rightmargin 3cm
+\rightmargin 2.5cm
 \bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
@@ -101,22 +102,22 @@
 
 \begin_layout Title
 The Traill island model for lemming dynamics, how it compares to Fennoscandian
- vole models and a proposed low-dimensional simplification
+ vole dynamics models, and a proposed simplification
 \end_layout
 
 \begin_layout Abstract
 The Traill island model of Gilg et al.
- (2003) is a landmark mechanistic modelling attempt of the cyclic population
- dynamics of rodents, focusing on a high Arctic community with one prey,
- the collared lemming, and four predators : the stoat, the Arctic fox, the
- long-tailed skua and the snowy owl.
+ (2003) is a landmark attempt at mechanistic modelling of the cyclic population
+ dynamics of rodents, focusing on a high Arctic community.
+ It models the dynamics of one prey, the collared lemming, and four predators
+ : the stoat, the Arctic fox, the long-tailed skua and the snowy owl.
  In the present short note, we first summarize how the model works in light
  of theory on seasonally forced predator-prey systems, with a focus on the
  temporal dynamics of predation rates.
  We show notably how the impact of generalist predation, which is able here
  to initiate population declines, differs slightly from that of generalist
  predation in other mechanistic models of rodent-mustelid interactions such
- as Turchin & Hanski (1997)'s, which is also simulated here.
+ as Turchin & Hanski (1997).
  We then provide a low-dimensional approximation with a single generalist
  predator compartment that mimics the essential features of the Traill island
  model: cycle periodicity, amplitude, shape, as well as generalist-induced
@@ -324,7 +325,7 @@ with
 .
  In other words, there is a higher predator death rate when there is no
  food.
- The stoat compartment is additionally submitted to an interruption and
+ The stoat compartment is additionally subjected to an interruption and
  modification of the state variable, i.e., each year at time 
 \begin_inset Formula $t_{\text{stoat}}$
 \end_inset
@@ -545,7 +546,7 @@ Fox
 \end_inset
 
 
-\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$
+\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{\text{mod}}-9)}}$
 \end_inset
 
 
@@ -636,7 +637,7 @@ Owl
 \end_inset
 
 
-\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$
+\begin_inset Formula $\frac{1}{1+e^{-0.36(365t_{\text{mod}}-9)}}$
 \end_inset
 
 
@@ -727,7 +728,7 @@ LT skua
 \end_inset
 
 
-\begin_inset Formula $\frac{1}{1+e^{-0.464(365t_{mod}-4.55)}}$
+\begin_inset Formula $\frac{1}{1+e^{-0.464(365t_{\text{mod}}-4.55)}}$
 \end_inset
 
 
@@ -860,8 +861,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../GilgEtAl2003/original_model/PredatorAbundance.pdf
-	scale 80
+	filename PredatorAbundance.pdf
+	scale 90
 
 \end_inset
 
@@ -872,7 +873,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Predator abundances over time in the Gilg et al.
+
+\series bold
+Predator abundances
+\series default
+ over time in the Gilg et al.
  (2003) model for the reference parameter set with all predators present.
 \end_layout
 
@@ -896,7 +901,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename TimeSeriesLogScale.pdf
-	width 14cm
+	width 15cm
 
 \end_inset
 
@@ -909,10 +914,10 @@ status open
 \begin_layout Plain Layout
 
 \series bold
-Population cycles and predation rates in the Gilg et al.
- (2003) model, in logarithmic scale.
-
+Population cycles and predation rates 
 \series default
+in the Gilg et al.
+ (2003) model, in logarithmic scale.
  Parameters for lemming and stoats: 
 \begin_inset Formula $r_{W}=5,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.08,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$
 \end_inset
@@ -1055,7 +1060,7 @@ literal "true"
  
 \series default
 this is largely due to the recruitment of juveniles foxes at the end of
- the cycle.
+ the year.
  We initially spotted this because of a typo in 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1131,8 +1136,7 @@ Parameters for lemming growth:
 \end_inset
 
 .
- The max.
- number of owls has been multiplied by two.
+ The maximum number of owls has been multiplied by two.
  
 \end_layout
 
@@ -1193,7 +1197,7 @@ Our conclusion is therefore that both `generalists' such as skuas/owls/foxes
 \end_layout
 
 \begin_layout Section*
-Comparison to the vole weasel-model of Turchin and Hanski (1997)
+Comparison to the vole-weasel model of Turchin and Hanski (1997)
 \end_layout
 
 \begin_layout Standard
@@ -1287,7 +1291,7 @@ with possibly a small noise term on all parameters, so that each parameter
 \noun default
 \color inherit
  is transformed once a year into 
-\begin_inset Formula $\Pi_{t}(1+\sigma\epsilon_{t}),\epsilon_{t}\sim N(0,1)$
+\begin_inset Formula $\Pi_{t}(1+\sigma\epsilon_{t}),\epsilon_{t}\sim\mathcal{N}(0,1)$
 \end_inset
 
 .
@@ -1297,7 +1301,7 @@ with possibly a small noise term on all parameters, so that each parameter
 
  is increased from South to North.
  We use here the parameters 
-\begin_inset Formula $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0;D=6.0,Q=40.0;,\,G=60.0,\,H=15,\,\sigma=0$
+\begin_inset Formula $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0,D=6.0,Q=40.0,\,G=60.0,\,H=15,\,\sigma=0$
 \end_inset
 
 .
@@ -1310,7 +1314,7 @@ literal "true"
 \end_inset
 
  for a recent investigation of the possible effects of changes in seasonality
- over the gradient on periodicity and amplitude.
+ over the gradient on cycle periodicity and amplitude.
  
 \end_layout
 
@@ -1318,7 +1322,7 @@ literal "true"
 In Fig.
  4 below we illustrate the time series of weasel and vole densities as well
  as the total amount killed per unit time for specialists or generalists,
- which shows that specialist predation is superior to generalist predation
+ which shows that specialist predation is larger than generalist predation
  during vole population declines.
  
 \end_layout
@@ -1347,11 +1351,12 @@ status open
 \begin_layout Plain Layout
 
 \series bold
-Densities and predation rates 
+Densities and predation rates in a modified version of the Turchin & Hanski
+ (1997) model
 \series default
-in a modified version of the Turchin & Hanski (1997) model, where we additionall
-y allowed generalist predation rates to vary seasonally, but voles still
- reproduce better in summer which counteracts the increased predation levels.
+, where we additionally allowed generalist predation rates to vary seasonally.
+ Voles still reproduce better in summer, which counteracts the increased
+ predation levels in summer.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:modifiedTH97"
@@ -1388,7 +1393,7 @@ By contrast, the model that we adapted for modelling Greenland lemmings
 \end_layout
 
 \begin_layout Section*
-``Pooled generalists'' model (aka Lemming - Stoat - Skua)
+``Pooled generalists'' model (aka Lemming - Stoat - Skua model)
 \end_layout
 
 \begin_layout Standard
@@ -1547,7 +1552,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-``Pooled generalists'' LSS model simulation.
+
+\series bold
+``Pooled generalists'' LSS model simulation
+\series default
+.
+ See text for parameter values.
+ 
 \end_layout
 
 \end_inset
@@ -1669,15 +1680,17 @@ literal "true"
 status open
 
 \begin_layout Plain Layout
-Surely this applies to many other mechanistic models...
+This remark may very well apply to numerous other mechanistic models for
+ cyclic populations.
 \end_layout
 
 \end_inset
 
 .
- With very rich datasets (>100 data points), it might be possible to find
- the most likely models just based on cycle shape, but given the limited
- data available here (
+ With rich datasets (e.g.
+ >100 data points in this context), it might be possible to find the most
+ likely models just based on cycle shape, but given the limited data available
+ here (
 \begin_inset Formula $\approx$
 \end_inset
 
@@ -1722,7 +1735,7 @@ status open
 
 \begin_layout Plain Layout
 
-DOI:10.5281/zenodo.4271834
+DOI:10.5281/zenodo.4271833
 \end_layout
 
 \end_inset
@@ -1770,147 +1783,6 @@ FB thanks Rachel A.
  Taylor for discussions and sharing results on the effects of generalist
  predation in the Turchin & Hanski (1997) model.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Here we stick to that interpretation: it is 
-\emph on
-possible 
-\emph default
-(perhaps likely) that avian predators provoke crashes in lemmings and that
- stoats amplify and lengthen such fluctuations by bringing the lemming populatio
-ns to very low values for extended periods of time.
- Which leads to the question: what do suggest meta-analyses of empirical
- data on rodents? 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "lima2006feedback"
-literal "true"
-
-\end_inset
-
- report a strong first-order signal with many coefficients of log-linear
- autoregressive models ranking on the left side of the Royama triangle (where
- the model exhibits overcompensating direct density-dependence), which suggests
- mostly fast crashes (like in this model).
- Our numerical experiments with the model of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "turchin1997ebm"
-literal "true"
-
-\end_inset
-
- suggest that it is possible to tweak the parameters so as to span the whole
- of Royama's triangle though.
- However, linear autoregressive models do not reproduce well the nonlinear
- shape of density-dependence in the Turchin and Hanski model.
- Nonlinear statistical models, with often fewer parameters, can and do help
- understanding the precise shape of density-dependence, itself related to
- cycle shape 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "framstad1997limit,kausrud2008linking,barraquand2014overcompensation"
-literal "true"
-
-\end_inset
-
-.
- Hence, it is difficult to produce clear-cut conclusions, and more empirically-d
-riven work is needed.
- In the meantime caution should be exerted in inferences of mechanisms behind
- oscillations on the basis of high-dimensional mechanistic models.
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Additional evidence for non-stabilizing effect of generalist predators
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand citet
-key "korpimaki2005vole"
-literal "true"
-
-\end_inset
-
- suggested the possibility of low-amplitude cycles generated by generalists
- with a model based on isoclines.
- More recently, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "erbach2013bistability"
-literal "true"
-
-\end_inset
-
-
-\series bold
-\emph on
- 
-\series default
-\emph default
-remarked thoughtfully that even the simplest ordinary differential equation
- models including generalist predators neglect that true generalists can
- and do reproduce at low food density of their primary prey.
- This would not be the case for the skuas and owls in Greenland, but is
- relevant for quite a few other species of interest at lower latitudes.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "erbach2013bistability"
-literal "true"
-
-\end_inset
-
- then showed that generalist predator-prey models including consumer reproductio
-n at low resource density do exhibit limit cycles, and various other kinds
- of oscillatory behaviour.
- That is an example where generalist predation directly initiate declines
- as well.
- In a more applied setting, it has also been remarked that fishing - a key
- example of generalist predation - can magnify the fluctuations of fish
- populations by changing prey demographic structure towards faster life-historie
-s 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "anderson2008fishing,shelton2011fluctuations"
-literal "true"
-
-\end_inset
-
-.
- In that case, generalists do not initiate necessarily the fluctuations
- but instead amplify them.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

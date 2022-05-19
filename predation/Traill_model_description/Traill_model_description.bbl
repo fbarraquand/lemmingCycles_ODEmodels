@@ -1,0 +1,97 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Barraquand and Henden(2020)}]{frederic_barraquand_2020_4271834}
+Barraquand, F., and J.-A. Henden. 2020.
+\newblock Models for lemming population cycles \doi{10.5281/zenodo.4271834}.
+
+\bibitem[{Gilg et~al.(2003)Gilg, Hanski, and Sittler}]{gilg2003cyclic}
+Gilg, O., I.~Hanski, and B.~Sittler. 2003.
+\newblock Cyclic dynamics in a simple vertebrate predator-prey community.
+\newblock Science 301:866--868.
+
+\bibitem[{Gilg et~al.(2009)Gilg, Sittler, and Hanski}]{gilg2009climate}
+Gilg, O., B.~Sittler, and I.~Hanski. 2009.
+\newblock {Climate change and cyclic predator--prey population dynamics in the
+  high Arctic}.
+\newblock Global Change Biology 15:2634--2652.
+
+\bibitem[{Kendall et~al.(2005)Kendall, Ellner, McCauley, Wood, Briggs, Murdoch,
+  and Turchin}]{kendall2005population}
+Kendall, B.~E., S.~P. Ellner, E.~McCauley, S.~N. Wood, C.~J. Briggs, W.~W.
+  Murdoch, and P.~Turchin. 2005.
+\newblock Population cycles in the pine looper moth: Dynamical tests of
+  mechanistic hypotheses.
+\newblock Ecological Monographs 75:259--276.
+
+\bibitem[{King and Schaffer(2001)}]{king2001gpc}
+King, A., and W.~Schaffer. 2001.
+\newblock {The geometry of a population cycle: a mechanistic model of snowshoe
+  hare demography}.
+\newblock Ecology 82:814--830.
+
+\bibitem[{Korpim{\"a}ki et~al.(2002)Korpim{\"a}ki, Norrdahl, Klemola,
+  Pettersen, and Stenseth}]{korpimaki2002dynamic}
+Korpim{\"a}ki, E., K.~Norrdahl, T.~Klemola, T.~Pettersen, and N.~C. Stenseth.
+  2002.
+\newblock Dynamic effects of predators on cyclic voles: field experimentation
+  and model extrapolation.
+\newblock Proceedings of the Royal Society of London. Series B: Biological
+  Sciences 269:991--997.
+
+\bibitem[{Oksanen et~al.(2008)Oksanen, Oksanen, Dahlgren, and
+  Olofsson}]{oksanen2008arctic}
+Oksanen, T., L.~Oksanen, J.~Dahlgren, and J.~Olofsson. 2008.
+\newblock {Arctic lemmings, Lemmus spp. and Dicrostonyx spp.: integrating
+  ecological and evolutionary perspectives}.
+\newblock Evolutionary Ecology Research 10:415--434.
+
+\bibitem[{Rinaldi et~al.(1993)Rinaldi, Muratori, and
+  Kuznetsov}]{rinaldi1993multiple}
+Rinaldi, S., S.~Muratori, and Y.~Kuznetsov. 1993.
+\newblock Multiple attractors, catastrophes and chaos in seasonally perturbed
+  predator-prey communities.
+\newblock Bulletin of mathematical Biology 55:15--35.
+
+\bibitem[{Royama(1992)}]{royama1992analytical}
+Royama, T. 1992.
+\newblock Analytical population dynamics, volume~10 of \emph{Population and
+  community biology series}.
+\newblock Chapman and Hall, London, UK.
+
+\bibitem[{Taylor et~al.(2012)Taylor, Sherratt, and White}]{taylor2012seasonal}
+Taylor, R.~A., J.~A. Sherratt, and A.~White. 2012.
+\newblock Seasonal forcing and multi-year cycles in interacting populations:
+  lessons from a predator--prey model.
+\newblock Journal of mathematical biology pages 1--24.
+
+\bibitem[{Taylor et~al.(2013)Taylor, White, and
+  Sherratt}]{taylor2013variations}
+Taylor, R.~A., A.~White, and J.~A. Sherratt. 2013.
+\newblock How do variations in seasonality affect population cycles?
+\newblock Proceedings of the Royal Society B: Biological Sciences 280.
+\newblock \doi{10.1098/rspb.2012.2714}.
+
+\bibitem[{Turchin and Batzli(2001)}]{turchin2001availability}
+Turchin, P., and G.~O. Batzli. 2001.
+\newblock Availability of food and the population dynamics of arvicoline
+  rodents.
+\newblock Ecology 82:1521--1534.
+
+\bibitem[{Turchin and Hanski(1997)}]{turchin1997ebm}
+Turchin, P., and I.~Hanski. 1997.
+\newblock {An empirically based model for latitudinal gradient in vole
+  population dynamics}.
+\newblock American Naturalist 149:842--874.
+
+\bibitem[{Turchin et~al.(2000)Turchin, Oksanen, Ekerholm, Oksanen, and
+  Henttonen}]{turchin2000lemmings}
+Turchin, P., L.~Oksanen, P.~Ekerholm, T.~Oksanen, and H.~Henttonen. 2000.
+\newblock {Are lemmings prey or predators?}
+\newblock Nature 405:562--565.
+
+\end{thebibliography}

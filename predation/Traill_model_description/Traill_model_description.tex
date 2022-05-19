@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{geometry}
-\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=3cm,rmargin=3cm}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{url}
@@ -24,6 +24,7 @@
 \usepackage{ae,lmodern}
 \usepackage{lineno}
 \usepackage{authblk}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 \date{}
 
@@ -33,38 +34,38 @@
 \author[1]{\\ Rolf A. Ims}
 \author[1]{Nigel G. Yoccoz}
 
-\affil[1]{Department of Arctic and Marine Biology, University of Tromsø, Tromsø, Norway}
-\affil[2]{Institute of Mathematics of Bordeaux, CNRS, France}
-\affil[3]{Chrono-environnement, Université de Bourgogne Franche-Comté, Besançon, France}
-\affil[4]{Groupe de Recherche en Ecologie Arctique, Francheville, France}
+\affil[1]{\normalsize Department of Arctic and Marine Biology, UiT The Arctic University of Norway, Tromsø, Norway}
+\affil[2]{\normalsize Institute of Mathematics of Bordeaux, CNRS and University of Bordeaux, Talence, France}
+\affil[3]{\normalsize Laboratoire Chrono-environnement, Université de Bourgogne Franche-Comté, Besançon, France}
+\affil[4]{\normalsize Groupe de Recherche en Ecologie Arctique, Francheville, France}
 
 \makeatother
 
 \usepackage{babel}
 \begin{document}
 \title{The Traill island model for lemming dynamics, how it compares to Fennoscandian
-vole models and a proposed low-dimensional simplification}
+vole dynamics models, and a proposed simplification}
 \maketitle
 \begin{abstract}
-The Traill island model of Gilg et al. (2003) is a landmark mechanistic
-modelling attempt of the cyclic population dynamics of rodents, focusing
-on a high Arctic community with one prey, the collared lemming, and
-four predators : the stoat, the Arctic fox, the long-tailed skua and
-the snowy owl. In the present short note, we first summarize how the
-model works in light of theory on seasonally forced predator-prey
-systems, with a focus on the temporal dynamics of predation rates.
-We show notably how the impact of generalist predation, which is able
-here to initiate population declines, differs slightly from that of
-generalist predation in other mechanistic models of rodent-mustelid
-interactions such as Turchin \& Hanski (1997)'s, which is also simulated
-here. We then provide a low-dimensional approximation with a single
-generalist predator compartment that mimics the essential features
-of the Traill island model: cycle periodicity, amplitude, shape, as
-well as generalist-induced declines. This simpler model should be
-broadly applicable to model other lemming populations that predominantly
-grow under the snow during the winter period. Matlab computer codes
-for Gilg et al. (2003), its two-dimensional approximation, as well
-as alternative lemming population dynamics models are provided. 
+The Traill island model of Gilg et al. (2003) is a landmark attempt
+at mechanistic modelling of the cyclic population dynamics of rodents,
+focusing on a high Arctic community. It models the dynamics of one
+prey, the collared lemming, and four predators : the stoat, the Arctic
+fox, the long-tailed skua and the snowy owl. In the present short
+note, we first summarize how the model works in light of theory on
+seasonally forced predator-prey systems, with a focus on the temporal
+dynamics of predation rates. We show notably how the impact of generalist
+predation, which is able here to initiate population declines, differs
+slightly from that of generalist predation in other mechanistic models
+of rodent-mustelid interactions such as Turchin \& Hanski (1997).
+We then provide a low-dimensional approximation with a single generalist
+predator compartment that mimics the essential features of the Traill
+island model: cycle periodicity, amplitude, shape, as well as generalist-induced
+declines. This simpler model should be broadly applicable to model
+other lemming populations that predominantly grow under the snow during
+the winter period. Matlab computer codes for Gilg et al. (2003), its
+two-dimensional approximation, as well as alternative lemming population
+dynamics models are provided. 
 \end{abstract}
 \textbf{Keywords: }lemmings, voles, population cycles, predator-prey
 models, tundra ecosystems
@@ -122,7 +123,7 @@ death rate, and $\Delta(N)$ a sigmoid function between 0 and 1, that
 makes the dynamics switch between the two mortality rates according
 to the formula $\Delta(N)=1/2+\arctan(b(N-D))/\pi$. In other words,
 there is a higher predator death rate when there is no food. The stoat
-compartment is additionally submitted to an interruption and modification
+compartment is additionally subjected to an interruption and modification
 of the state variable, i.e., each year at time $t_{\text{stoat}}$
 the integration stops and the predator density switches from $P$
 to $P(1+v)$ where $v$ is the number of offsprings (the youngs are
@@ -148,9 +149,9 @@ in generalist predation pressure) is fully described in Table 1.
 {\footnotesize{}Predator} & {\footnotesize{}Adults (when present)} & {\footnotesize{}Youngs x Growth youngs} & {\footnotesize{}Arrival date} & {\footnotesize{}Leaving date} & {\footnotesize{}Birth date}\tabularnewline
 \hline 
 {\footnotesize{}Fox} & {\footnotesize{}$P_{f}=\frac{b_{f}N'^{2}}{Y_{f}^{2}+N'^{2}}$} & {\footnotesize{}$P_{yf}(t)=\frac{b'_{f}N'^{2}}{Y_{f}\text{'\texttwosuperior}+N'^{2}}$
-$\times$$\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$} & {\footnotesize{}$t_{ofa}=0.52$} & {\footnotesize{}$t_{\text{fall}}=1.0$} & {\footnotesize{}$t_{\text{snowmelt}}=0.65$}\tabularnewline
-{\footnotesize{}Owl} & \multicolumn{1}{c}{{\footnotesize{}$P_{o}=\frac{b_{o}(N'-2)}{Yo+N'-4}$}} & {\footnotesize{}$P_{yo}(t)=\frac{b'_{o}(N'-2)}{Y'_{o}+N'-4}$$\times$$\frac{1}{1+e^{-0.36(365t_{mod}-9)}}$} & {\footnotesize{}$t_{ofa}=0.52$} & {\footnotesize{}$t_{ol}=0.94$} & {\footnotesize{}$t_{\text{birth owl}}=0.67$}\tabularnewline
-{\footnotesize{}LT skua} & {\footnotesize{}$P_{l}=0.02$} & {\footnotesize{}$P_{yl}(t)=\frac{b'_{l}N'^{2}}{Y_{l}'^{2}+N'^{2}}$$\times$$\frac{1}{1+e^{-0.464(365t_{mod}-4.55)}}$} & {\footnotesize{}$t_{la}=0.62$} & {\footnotesize{}$t_{ll}=0.81$} & {\footnotesize{}$t_{\text{birth skua}}=0.72$}\tabularnewline
+$\times$$\frac{1}{1+e^{-0.36(365t_{\text{mod}}-9)}}$} & {\footnotesize{}$t_{ofa}=0.52$} & {\footnotesize{}$t_{\text{fall}}=1.0$} & {\footnotesize{}$t_{\text{snowmelt}}=0.65$}\tabularnewline
+{\footnotesize{}Owl} & \multicolumn{1}{c}{{\footnotesize{}$P_{o}=\frac{b_{o}(N'-2)}{Yo+N'-4}$}} & {\footnotesize{}$P_{yo}(t)=\frac{b'_{o}(N'-2)}{Y'_{o}+N'-4}$$\times$$\frac{1}{1+e^{-0.36(365t_{\text{mod}}-9)}}$} & {\footnotesize{}$t_{ofa}=0.52$} & {\footnotesize{}$t_{ol}=0.94$} & {\footnotesize{}$t_{\text{birth owl}}=0.67$}\tabularnewline
+{\footnotesize{}LT skua} & {\footnotesize{}$P_{l}=0.02$} & {\footnotesize{}$P_{yl}(t)=\frac{b'_{l}N'^{2}}{Y_{l}'^{2}+N'^{2}}$$\times$$\frac{1}{1+e^{-0.464(365t_{\text{mod}}-4.55)}}$} & {\footnotesize{}$t_{la}=0.62$} & {\footnotesize{}$t_{ll}=0.81$} & {\footnotesize{}$t_{\text{birth skua}}=0.72$}\tabularnewline
 \hline 
 \end{tabular}{\footnotesize\par}
 \par\end{raggedright}
@@ -167,18 +168,19 @@ leaving time for the long-tailed skua.}
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.8]{../GilgEtAl2003/original_model/PredatorAbundance}
+\includegraphics[scale=0.9]{PredatorAbundance}
 \par\end{centering}
-\caption{Predator abundances over time in the Gilg et al. (2003) model for
-the reference parameter set with all predators present.}
+\caption{\textbf{Predator abundances} over time in the Gilg et al. (2003) model
+for the reference parameter set with all predators present.}
 \end{figure}
 
 \begin{figure}
 \begin{centering}
-\includegraphics[width=14cm]{TimeSeriesLogScale}
+\includegraphics[width=15cm]{TimeSeriesLogScale}
 \par\end{centering}
-\caption{\textbf{Population cycles and predation rates in the Gilg et al. (2003)
-model, in logarithmic scale.} Parameters for lemming and stoats: $r_{W}=5,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.08,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$.
+\caption{\textbf{Population cycles and predation rates }in the Gilg et al.
+(2003) model, in logarithmic scale. Parameters for lemming and stoats:
+$r_{W}=5,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.08,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$.
 Lemming density is given in individuals per ha. }
 \end{figure}
 
@@ -202,7 +204,7 @@ periodicity like shown in \citet{turchin1997ebm}.
 The \citet{gilg2003cyclic} model without mustelids, but with generalist
 predators, can exhibit 2-year population cycles for some parameter
 values (Fig. 3), and\textbf{ }this is largely due to the recruitment
-of juveniles foxes at the end of the cycle. We initially spotted this
+of juveniles foxes at the end of the year. We initially spotted this
 because of a typo in \citet{gilg2003cyclic}'s Supplementary Material
 (which has been corrected in \citealp{gilg2009climate} and did not
 affect \citealp{gilg2003cyclic}'s simulations) where the max density
@@ -217,7 +219,7 @@ at another study site, such short-term fluctuations might become possible.
 \par\end{centering}
 \caption{\textbf{2-year population cycles (and transients) in the Gilg et al.
 (2003) model without mustelids. }Parameters for lemming growth: $r_{W}=4,\,r_{S}=0.8,\,v=4.0,\,c=1000,\,D=0.1,\,N_{crit}=D,\,d_{l}=0.1,\,d_{h}=4,\,b=25$.
-The max. number of owls has been multiplied by two. }
+The maximum number of owls has been multiplied by two. }
 \end{figure}
 
 On the other hand, removing the skua population in the differential
@@ -242,7 +244,7 @@ collared lemming fluctuations in the Traill Island model. These considerations
 open up new challenges in defining the precise role of generalist
 (or nomadic specialists) versus resident specialist predators. 
 
-\section*{Comparison to the vole weasel-model of Turchin and Hanski (1997)}
+\section*{Comparison to the vole-weasel model of Turchin and Hanski (1997)}
 
 The model of \citet{turchin1997ebm} can be written
 
@@ -265,33 +267,34 @@ Adding seasonality and adimensionalizing, we arrive at
 \end{equation}
 
 with possibly a small noise term on all parameters, so that each parameter
-$\Pi_{t}$ is transformed once a year into $\Pi_{t}(1+\sigma\epsilon_{t}),\epsilon_{t}\sim N(0,1)$.
+$\Pi_{t}$ is transformed once a year into $\Pi_{t}(1+\sigma\epsilon_{t}),\epsilon_{t}\sim\mathcal{N}(0,1)$.
 This models reproduces the Fennoscandian gradient when $G$ is increased
-from South to North. We use here the parameters $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0;D=6.0,Q=40.0;,\,G=60.0,\,H=15,\,\sigma=0$.
+from South to North. We use here the parameters $r=6,\,e=1.0,\,K=150.0,\,s=1.25,\,C=600.0,D=6.0,Q=40.0,\,G=60.0,\,H=15,\,\sigma=0$.
 See \citet{taylor2013variations} for a recent investigation of the
-possible effects of changes in seasonality over the gradient on periodicity
-and amplitude. 
+possible effects of changes in seasonality over the gradient on cycle
+periodicity and amplitude. 
 
 In Fig. 4 below we illustrate the time series of weasel and vole densities
 as well as the total amount killed per unit time for specialists or
-generalists, which shows that specialist predation is superior to
+generalists, which shows that specialist predation is larger than
 generalist predation during vole population declines. 
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=14cm]{TimeSeriesLogScale_TH97_seasonalGenPred}
 \par\end{centering}
-\caption{\textbf{Densities and predation rates }in a modified version of the
-Turchin \& Hanski (1997) model, where we additionally allowed generalist
-predation rates to vary seasonally, but voles still reproduce better
-in summer which counteracts the increased predation levels.\label{fig:modifiedTH97}}
+\caption{\textbf{Densities and predation rates in a modified version of the
+Turchin \& Hanski (1997) model}, where we additionally allowed generalist
+predation rates to vary seasonally. Voles still reproduce better in
+summer than winter, which counteracts the increased predation levels
+in summer.\label{fig:modifiedTH97}}
 \end{figure}
 
 By contrast, the model that we adapted for modelling Greenland lemmings
 using the same model framework shows a slightly different kind of
 dynamics. 
 
-\section*{``Pooled generalists'' model (aka Lemming - Stoat - Skua)}
+\section*{``Pooled generalists'' model (aka Lemming - Stoat - Skua model)}
 
 Because there are very many parameters in \citet{gilg2003cyclic}
 (26 in Table S1 and S2 from the original paper, plus potentially 10
@@ -331,7 +334,8 @@ clearly that generalists clearly initiate the lemming declines, by
 ``cropping off'' the lemming peaks. 
 
 \begin{figure}[H]
-\centering{}\includegraphics[width=14cm]{TimeSeriesLogScale_LemmingLikeTH97_SinusoidalSeasonality}\caption{``Pooled generalists'' LSS model simulation.}
+\centering{}\includegraphics[width=14cm]{TimeSeriesLogScale_LemmingLikeTH97_SinusoidalSeasonality}\caption{\textbf{``Pooled generalists'' LSS model simulation}. See text for
+parameter values. }
 \label{LSS}
 \end{figure}
 
@@ -358,22 +362,22 @@ which incidentally refutes the claims of \citet{turchin2000lemmings}
 that ``prey peaks'' have a rounded shape. The models by \citet{korpimaki2002dynamic}
 and \citet{gilg2003cyclic} therefore seem to be equally good at describing
 periodicity and amplitude of the time series, but equally limited
-to reproduce cycle shape\footnote{Surely this applies to many other mechanistic models...}.
-With very rich datasets (>100 data points), it might be possible to
-find the most likely models just based on cycle shape, but given the
-limited data available here ($\approx$ 25 years with no spatial replication,
-which is common in many stuch study sites), such endeavours may be
-a little premature. Mechanistic mathematical models may be best interpreted
-as illustrating what is \emph{possible,} rather than what is actually
-happening in real populations. Although in some cases, it may be possible
-to at least rank different scenarios based on very contrasted models
-and multiple model diagnostics \citep{kendall2005population}. 
+to reproduce cycle shape\footnote{This remark may very well apply to numerous other mechanistic models
+for cyclic populations.}. With rich datasets (e.g. >100 data points in this context), it might
+be possible to find the most likely models just based on cycle shape,
+but given the limited data available here ($\approx$ 25 years with
+no spatial replication, which is common in many stuch study sites),
+such endeavours may be a little premature. Mechanistic mathematical
+models may be best interpreted as illustrating what is \emph{possible,}
+rather than what is actually happening in real populations. Although
+in some cases, it may be possible to at least rank different scenarios
+based on very contrasted models and multiple model diagnostics \citep{kendall2005population}. 
 
 \subsubsection*{Code availability}
 
 Computer codes have been deposited at Zenodo as part of our release
 of lemming population cycles models \citep{frederic_barraquand_2020_4271834}
-with \url{DOI:10.5281/zenodo.4271834}. These are additionally available
+with \url{DOI:10.5281/zenodo.4271833}. These are additionally available
 at \url{https://github.com/fbarraquand/lemmingCycles_ODEmodels}.
 The repository includes of course code for the original Traill island
 model, codes to simulate the Turchin \& Hanski (1997) model with/without
